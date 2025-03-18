@@ -1,0 +1,10 @@
+version: 2
+enable-beta-ecosystems: true
+updates:
+  - directory: /
+    open-pull-requests-limit: 10
+    rebase-strategy: auto
+    package-ecosystem: bun
+    schedule:
+      interval: daily
+    versioning-strategy: increase

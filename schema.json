@@ -1,0 +1,759 @@
+{
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "schema": {
+      "type": "string"
+    },
+    "models": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "model": {
+                    "type": "string"
+                  },
+                  "apiKey": {
+                    "type": "string"
+                  },
+                  "apiBase": {
+                    "type": "string"
+                  },
+                  "roles": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "chat",
+                        "autocomplete",
+                        "embed",
+                        "rerank",
+                        "edit",
+                        "apply",
+                        "summarize"
+                      ]
+                    }
+                  },
+                  "capabilities": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "tool_use",
+                        "image_input"
+                      ]
+                    }
+                  },
+                  "defaultCompletionOptions": {
+                    "type": "object",
+                    "properties": {
+                      "contextLength": {
+                        "type": "number"
+                      },
+                      "maxTokens": {
+                        "type": "number"
+                      },
+                      "temperature": {
+                        "type": "number"
+                      },
+                      "topP": {
+                        "type": "number"
+                      },
+                      "topK": {
+                        "type": "number"
+                      },
+                      "stop": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "n": {
+                        "type": "number"
+                      }
+                    },
+                    "additionalProperties": false
+                  },
+                  "requestOptions": {
+                    "type": "object",
+                    "properties": {
+                      "timeout": {
+                        "type": "number"
+                      },
+                      "verifySsl": {
+                        "type": "boolean"
+                      },
+                      "caBundlePath": {
+                        "anyOf": [
+                          {
+                            "type": "string"
+                          },
+                          {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          }
+                        ]
+                      },
+                      "proxy": {
+                        "type": "string"
+                      },
+                      "headers": {
+                        "type": "object",
+                        "additionalProperties": {
+                          "type": "string"
+                        }
+                      },
+                      "extraBodyProperties": {
+                        "type": "object",
+                        "additionalProperties": {}
+                      },
+                      "noProxy": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "clientCertificate": {
+                        "type": "object",
+                        "properties": {
+                          "cert": {
+                            "type": "string"
+                          },
+                          "key": {
+                            "type": "string"
+                          },
+                          "passphrase": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "cert",
+                          "key"
+                        ],
+                        "additionalProperties": false
+                      }
+                    },
+                    "additionalProperties": false
+                  },
+                  "embedOptions": {
+                    "type": "object",
+                    "properties": {
+                      "maxChunkSize": {
+                        "type": "number"
+                      },
+                      "maxBatchSize": {
+                        "type": "number"
+                      }
+                    },
+                    "additionalProperties": false
+                  },
+                  "promptTemplates": {
+                    "type": "object",
+                    "properties": {
+                      "apply": {
+                        "type": "string"
+                      },
+                      "edit": {
+                        "type": "string"
+                      }
+                    },
+                    "additionalProperties": false
+                  },
+                  "env": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": [
+                        "string",
+                        "boolean",
+                        "number"
+                      ]
+                    }
+                  },
+                  "provider": {
+                    "type": "string",
+                    "const": "continue-proxy"
+                  },
+                  "apiKeyLocation": {
+                    "type": "string"
+                  },
+                  "orgScopeId": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "onPremProxyUrl": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  }
+                },
+                "required": [
+                  "name",
+                  "model",
+                  "provider",
+                  "apiKeyLocation",
+                  "orgScopeId",
+                  "onPremProxyUrl"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/name"
+                  },
+                  "model": {
+                    "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/model"
+                  },
+                  "apiKey": {
+                    "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/apiKey"
+                  },
+                  "apiBase": {
+                    "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/apiBase"
+                  },
+                  "roles": {
+                    "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/roles"
+                  },
+                  "capabilities": {
+                    "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/capabilities"
+                  },
+                  "defaultCompletionOptions": {
+                    "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/defaultCompletionOptions"
+                  },
+                  "requestOptions": {
+                    "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/requestOptions"
+                  },
+                  "embedOptions": {
+                    "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/embedOptions"
+                  },
+                  "promptTemplates": {
+                    "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/promptTemplates"
+                  },
+                  "env": {
+                    "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/env"
+                  },
+                  "provider": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name",
+                  "model",
+                  "provider"
+                ],
+                "additionalProperties": false
+              }
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "uses": {
+                "type": "string"
+              },
+              "with": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                }
+              },
+              "override": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/name"
+                      },
+                      "model": {
+                        "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/model"
+                      },
+                      "apiKey": {
+                        "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/apiKey"
+                      },
+                      "apiBase": {
+                        "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/apiBase"
+                      },
+                      "roles": {
+                        "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/roles"
+                      },
+                      "capabilities": {
+                        "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/capabilities"
+                      },
+                      "defaultCompletionOptions": {
+                        "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/defaultCompletionOptions"
+                      },
+                      "requestOptions": {
+                        "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/requestOptions"
+                      },
+                      "embedOptions": {
+                        "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/embedOptions"
+                      },
+                      "promptTemplates": {
+                        "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/promptTemplates"
+                      },
+                      "env": {
+                        "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/env"
+                      },
+                      "provider": {
+                        "type": "string",
+                        "const": "continue-proxy"
+                      },
+                      "apiKeyLocation": {
+                        "type": "string"
+                      }
+                    },
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/name"
+                      },
+                      "model": {
+                        "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/model"
+                      },
+                      "apiKey": {
+                        "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/apiKey"
+                      },
+                      "apiBase": {
+                        "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/apiBase"
+                      },
+                      "roles": {
+                        "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/roles"
+                      },
+                      "capabilities": {
+                        "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/capabilities"
+                      },
+                      "defaultCompletionOptions": {
+                        "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/defaultCompletionOptions"
+                      },
+                      "requestOptions": {
+                        "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/requestOptions"
+                      },
+                      "embedOptions": {
+                        "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/embedOptions"
+                      },
+                      "promptTemplates": {
+                        "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/promptTemplates"
+                      },
+                      "env": {
+                        "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/env"
+                      },
+                      "provider": {
+                        "type": "string"
+                      }
+                    },
+                    "additionalProperties": false
+                  }
+                ]
+              }
+            },
+            "required": [
+              "uses"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      }
+    },
+    "context": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "provider": {
+                "type": "string"
+              },
+              "params": {}
+            },
+            "required": [
+              "provider"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "uses": {
+                "type": "string"
+              },
+              "with": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                }
+              },
+              "override": {
+                "type": "object",
+                "properties": {
+                  "provider": {
+                    "$ref": "#/properties/context/items/anyOf/0/properties/provider"
+                  },
+                  "params": {
+                    "$ref": "#/properties/context/items/anyOf/0/properties/params"
+                  }
+                },
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "uses"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      }
+    },
+    "data": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "destination": {
+                "type": "string"
+              },
+              "schema": {
+                "type": "string",
+                "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9A-Za-z-][0-9A-Za-z-]*)(?:\\.(?:0|[1-9A-Za-z-][0-9A-Za-z-]*))*))?(?:\\+([0-9A-Za-z-]+(?:\\.[0-9A-Za-z-]+)*))?$",
+                "errorMessage": {
+                  "pattern": "Version must follow semver format, e.g. 0.2.0"
+                }
+              },
+              "level": {
+                "type": "string",
+                "enum": [
+                  "all",
+                  "noCode"
+                ]
+              },
+              "events": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "requestOptions": {
+                "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/requestOptions"
+              },
+              "apiKey": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name",
+              "destination",
+              "schema"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "uses": {
+                "type": "string"
+              },
+              "with": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                }
+              },
+              "override": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "$ref": "#/properties/data/items/anyOf/0/properties/name"
+                  },
+                  "destination": {
+                    "$ref": "#/properties/data/items/anyOf/0/properties/destination"
+                  },
+                  "schema": {
+                    "$ref": "#/properties/data/items/anyOf/0/properties/schema"
+                  },
+                  "level": {
+                    "$ref": "#/properties/data/items/anyOf/0/properties/level"
+                  },
+                  "events": {
+                    "$ref": "#/properties/data/items/anyOf/0/properties/events"
+                  },
+                  "requestOptions": {
+                    "$ref": "#/properties/data/items/anyOf/0/properties/requestOptions"
+                  },
+                  "apiKey": {
+                    "$ref": "#/properties/data/items/anyOf/0/properties/apiKey"
+                  }
+                },
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "uses"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      }
+    },
+    "mcpServers": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "command": {
+                "type": "string"
+              },
+              "faviconUrl": {
+                "type": "string"
+              },
+              "args": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "env": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "name",
+              "command"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "uses": {
+                "type": "string"
+              },
+              "with": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                }
+              },
+              "override": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "$ref": "#/properties/mcpServers/items/anyOf/0/properties/name"
+                  },
+                  "command": {
+                    "$ref": "#/properties/mcpServers/items/anyOf/0/properties/command"
+                  },
+                  "faviconUrl": {
+                    "$ref": "#/properties/mcpServers/items/anyOf/0/properties/faviconUrl"
+                  },
+                  "args": {
+                    "$ref": "#/properties/mcpServers/items/anyOf/0/properties/args"
+                  },
+                  "env": {
+                    "$ref": "#/properties/mcpServers/items/anyOf/0/properties/env"
+                  }
+                },
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "uses"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      }
+    },
+    "rules": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "uses": {
+                "type": "string"
+              },
+              "with": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "uses"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      }
+    },
+    "prompts": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "prompt": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name",
+              "prompt"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "uses": {
+                "type": "string"
+              },
+              "with": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                }
+              },
+              "override": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "$ref": "#/properties/prompts/items/anyOf/0/properties/name"
+                  },
+                  "description": {
+                    "$ref": "#/properties/prompts/items/anyOf/0/properties/description"
+                  },
+                  "prompt": {
+                    "$ref": "#/properties/prompts/items/anyOf/0/properties/prompt"
+                  }
+                },
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "uses"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      }
+    },
+    "docs": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "startUrl": {
+                "type": "string"
+              },
+              "rootUrl": {
+                "type": "string"
+              },
+              "faviconUrl": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name",
+              "startUrl"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "uses": {
+                "type": "string"
+              },
+              "with": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                }
+              },
+              "override": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "$ref": "#/properties/docs/items/anyOf/0/properties/name"
+                  },
+                  "startUrl": {
+                    "$ref": "#/properties/docs/items/anyOf/0/properties/startUrl"
+                  },
+                  "rootUrl": {
+                    "$ref": "#/properties/docs/items/anyOf/0/properties/rootUrl"
+                  },
+                  "faviconUrl": {
+                    "$ref": "#/properties/docs/items/anyOf/0/properties/faviconUrl"
+                  }
+                },
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "uses"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      }
+    }
+  },
+  "required": [
+    "name",
+    "version"
+  ],
+  "additionalProperties": false,
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

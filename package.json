@@ -1,0 +1,16 @@
+{
+  "name": "continue-json-schema",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@continuedev/config-yaml": "^1.0.63",
+    "zod": "^3.24.2",
+    "zod-to-json-schema": "^3.24.4"
+  }
+}
