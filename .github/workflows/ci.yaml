@@ -1,8 +1,11 @@
 on:
   push:
-    paths:
-      - "package.json"
-      - "bun.lock"
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
 jobs:
   build-schema:
     runs-on: ubuntu-latest
