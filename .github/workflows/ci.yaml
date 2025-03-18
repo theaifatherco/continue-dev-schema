@@ -11,3 +11,10 @@ jobs:
       - uses: oven-sh/setup-bun@v2
       - run: bun install --frozen-lockfile
       - run: bun index.ts
+      - name: Commit the compiled actions
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Compiled Schema
+          branch: ${{ github.head_ref }}
+          commit_user_name: Schema Compiler
+          commit_user_email: ${{ github.actor }}@users.noreply.github.com
