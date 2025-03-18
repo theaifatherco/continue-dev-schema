@@ -84,7 +84,7 @@
                         "type": "number"
                       }
                     },
-                    "additionalProperties": false
+                    "additionalProperties": true
                   },
                   "requestOptions": {
                     "type": "object",
@@ -144,10 +144,10 @@
                           "cert",
                           "key"
                         ],
-                        "additionalProperties": false
+                        "additionalProperties": true
                       }
                     },
-                    "additionalProperties": false
+                    "additionalProperties": true
                   },
                   "embedOptions": {
                     "type": "object",
@@ -159,7 +159,7 @@
                         "type": "number"
                       }
                     },
-                    "additionalProperties": false
+                    "additionalProperties": true
                   },
                   "promptTemplates": {
                     "type": "object",
@@ -171,7 +171,7 @@
                         "type": "string"
                       }
                     },
-                    "additionalProperties": false
+                    "additionalProperties": true
                   },
                   "env": {
                     "type": "object",
@@ -211,7 +211,7 @@
                   "orgScopeId",
                   "onPremProxyUrl"
                 ],
-                "additionalProperties": false
+                "additionalProperties": true
               },
               {
                 "type": "object",
@@ -258,7 +258,7 @@
                   "model",
                   "provider"
                 ],
-                "additionalProperties": false
+                "additionalProperties": true
               }
             ]
           },
@@ -320,7 +320,7 @@
                         "type": "string"
                       }
                     },
-                    "additionalProperties": false
+                    "additionalProperties": true
                   },
                   {
                     "type": "object",
@@ -362,7 +362,7 @@
                         "type": "string"
                       }
                     },
-                    "additionalProperties": false
+                    "additionalProperties": true
                   }
                 ]
               }
@@ -370,7 +370,7 @@
             "required": [
               "uses"
             ],
-            "additionalProperties": false
+            "additionalProperties": true
           }
         ]
       }
@@ -390,7 +390,7 @@
             "required": [
               "provider"
             ],
-            "additionalProperties": false
+            "additionalProperties": true
           },
           {
             "type": "object",
@@ -414,13 +414,13 @@
                     "$ref": "#/properties/context/items/anyOf/0/properties/params"
                   }
                 },
-                "additionalProperties": false
+                "additionalProperties": true
               }
             },
             "required": [
               "uses"
             ],
-            "additionalProperties": false
+            "additionalProperties": true
           }
         ]
       }
@@ -470,7 +470,7 @@
               "destination",
               "schema"
             ],
-            "additionalProperties": false
+            "additionalProperties": true
           },
           {
             "type": "object",
@@ -509,13 +509,13 @@
                     "$ref": "#/properties/data/items/anyOf/0/properties/apiKey"
                   }
                 },
-                "additionalProperties": false
+                "additionalProperties": true
               }
             },
             "required": [
               "uses"
             ],
-            "additionalProperties": false
+            "additionalProperties": true
           }
         ]
       }
@@ -553,7 +553,7 @@
               "name",
               "command"
             ],
-            "additionalProperties": false
+            "additionalProperties": true
           },
           {
             "type": "object",
@@ -586,13 +586,13 @@
                     "$ref": "#/properties/mcpServers/items/anyOf/0/properties/env"
                   }
                 },
-                "additionalProperties": false
+                "additionalProperties": true
               }
             },
             "required": [
               "uses"
             ],
-            "additionalProperties": false
+            "additionalProperties": true
           }
         ]
       }
@@ -620,7 +620,7 @@
             "required": [
               "uses"
             ],
-            "additionalProperties": false
+            "additionalProperties": true
           }
         ]
       }
@@ -646,7 +646,7 @@
               "name",
               "prompt"
             ],
-            "additionalProperties": false
+            "additionalProperties": true
           },
           {
             "type": "object",
@@ -673,13 +673,13 @@
                     "$ref": "#/properties/prompts/items/anyOf/0/properties/prompt"
                   }
                 },
-                "additionalProperties": false
+                "additionalProperties": true
               }
             },
             "required": [
               "uses"
             ],
-            "additionalProperties": false
+            "additionalProperties": true
           }
         ]
       }
@@ -708,7 +708,7 @@
               "name",
               "startUrl"
             ],
-            "additionalProperties": false
+            "additionalProperties": true
           },
           {
             "type": "object",
@@ -738,13 +738,13 @@
                     "$ref": "#/properties/docs/items/anyOf/0/properties/faviconUrl"
                   }
                 },
-                "additionalProperties": false
+                "additionalProperties": true
               }
             },
             "required": [
               "uses"
             ],
-            "additionalProperties": false
+            "additionalProperties": true
           }
         ]
       }
@@ -754,6 +754,6 @@
     "name",
     "version"
   ],
-  "additionalProperties": false,
+  "additionalProperties": true,
   "$schema": "http://json-schema.org/draft-07/schema#"
 }
