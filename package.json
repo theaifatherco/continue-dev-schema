@@ -9,7 +9,7 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "@continuedev/config-yaml": "^1.0.63",
+    "@continuedev/config-yaml": "^1.0.67",
     "zod": "^3.24.2",
     "zod-to-json-schema": "^3.24.4"
   }
