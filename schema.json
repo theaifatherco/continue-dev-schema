@@ -382,9 +382,6 @@
           {
             "type": "object",
             "properties": {
-              "name": {
-                "type": "string"
-              },
               "provider": {
                 "type": "string"
               },
@@ -410,9 +407,6 @@
               "override": {
                 "type": "object",
                 "properties": {
-                  "name": {
-                    "$ref": "#/properties/context/items/anyOf/0/properties/name"
-                  },
                   "provider": {
                     "$ref": "#/properties/context/items/anyOf/0/properties/provider"
                   },
@@ -608,7 +602,30 @@
       "items": {
         "anyOf": [
           {
-            "type": "string"
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "rule": {
+                    "type": "string"
+                  },
+                  "if": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name",
+                  "rule"
+                ],
+                "additionalProperties": true
+              }
+            ]
           },
           {
             "type": "object",
