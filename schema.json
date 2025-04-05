@@ -382,6 +382,9 @@
           {
             "type": "object",
             "properties": {
+              "name": {
+                "type": "string"
+              },
               "provider": {
                 "type": "string"
               },
@@ -407,6 +410,9 @@
               "override": {
                 "type": "object",
                 "properties": {
+                  "name": {
+                    "$ref": "#/properties/context/items/anyOf/0/properties/name"
+                  },
                   "provider": {
                     "$ref": "#/properties/context/items/anyOf/0/properties/provider"
                   },
