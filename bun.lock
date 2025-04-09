@@ -4,7 +4,7 @@
     "": {
       "name": "continue-json-schema",
       "dependencies": {
-        "@continuedev/config-yaml": "^1.0.77",
+        "@continuedev/config-yaml": "^1.0.84",
         "zod": "^3.24.2",
         "zod-to-json-schema": "^3.24.5",
       },
@@ -19,7 +19,7 @@
   "packages": {
     "@continuedev/config-types": ["@continuedev/config-types@1.0.14", "", { "dependencies": { "zod": "^3.23.8" } }, "sha512-PVHyHPyRXd2QsaNgnCpiKYU3uHFTlyuQSkqE8OwrBmQqO6/TXUVIr/2EGtyIZGrml4Y+rGMSH40WU4/0t4SGpQ=="],
 
-    "@continuedev/config-yaml": ["@continuedev/config-yaml@1.0.77", "", { "dependencies": { "@continuedev/config-types": "^1.0.14", "yaml": "^2.6.1", "zod": "^3.24.2" } }, "sha512-Vke6jp4bENjJc9fO1tavOnbYXRmmSIEzNhYeQ6DzZVl92+8rWwdO6zhbrK0r4FGjHnH0cJgyK/q0zX9/l+6asw=="],
+    "@continuedev/config-yaml": ["@continuedev/config-yaml@1.0.84", "", { "dependencies": { "@continuedev/config-types": "^1.0.14", "yaml": "^2.6.1", "zod": "^3.24.2" }, "bin": { "config-yaml": "dist/cli.js" } }, "sha512-jiNqn34Bqpwo05Tr3mLIW8DG/kszlPtDApD03CCB+Uj1kemPBm85+cBGaJU5hnR4gdf2UfLGid6Nqe96QAxpbA=="],
 
     "@types/bun": ["@types/bun@1.2.8", "", { "dependencies": { "bun-types": "1.2.7" } }, "sha512-t8L1RvJVUghW5V+M/fL3Thbxcs0HwNsXsnTEBEfEVqGteiJToOlZ/fyOEaR1kZsNqnu+3XA4RI/qmnX4w6+S+w=="],
 
