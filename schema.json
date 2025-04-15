@@ -10,6 +10,40 @@
     "schema": {
       "type": "string"
     },
+    "metadata": {
+      "allOf": [
+        {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        {
+          "type": "object",
+          "properties": {
+            "tags": {
+              "type": "string"
+            },
+            "sourceCodeUrl": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "author": {
+              "type": "string"
+            },
+            "license": {
+              "type": "string"
+            },
+            "iconUrl": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": true
+        }
+      ]
+    },
     "models": {
       "type": "array",
       "items": {
