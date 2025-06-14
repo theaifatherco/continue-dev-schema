@@ -116,6 +116,27 @@
                       },
                       "n": {
                         "type": "number"
+                      },
+                      "reasoning": {
+                        "type": "boolean"
+                      },
+                      "reasoningBudgetTokens": {
+                        "type": "number"
+                      },
+                      "promptCaching": {
+                        "type": "boolean"
+                      }
+                    },
+                    "additionalProperties": true
+                  },
+                  "cacheBehavior": {
+                    "type": "object",
+                    "properties": {
+                      "cacheSystemMessage": {
+                        "type": "boolean"
+                      },
+                      "cacheConversation": {
+                        "type": "boolean"
                       }
                     },
                     "additionalProperties": true
@@ -191,6 +212,24 @@
                       },
                       "maxBatchSize": {
                         "type": "number"
+                      },
+                      "embeddingPrefixes": {
+                        "type": "object",
+                        "additionalProperties": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "additionalProperties": true
+                  },
+                  "chatOptions": {
+                    "type": "object",
+                    "properties": {
+                      "baseSystemMessage": {
+                        "type": "string"
+                      },
+                      "baseAgentSystemMessage": {
+                        "type": "string"
                       }
                     },
                     "additionalProperties": true
@@ -201,11 +240,40 @@
                       "apply": {
                         "type": "string"
                       },
+                      "chat": {
+                        "type": "string",
+                        "enum": [
+                          "llama2",
+                          "alpaca",
+                          "zephyr",
+                          "phi2",
+                          "phind",
+                          "anthropic",
+                          "chatml",
+                          "none",
+                          "openchat",
+                          "deepseek",
+                          "xwin-coder",
+                          "neural-chat",
+                          "codellama-70b",
+                          "llava",
+                          "gemma",
+                          "granite",
+                          "llama3",
+                          "codestral"
+                        ]
+                      },
                       "edit": {
+                        "type": "string"
+                      },
+                      "autocomplete": {
                         "type": "string"
                       }
                     },
                     "additionalProperties": true
+                  },
+                  "useLegacyCompletionsEndpoint": {
+                    "type": "boolean"
                   },
                   "env": {
                     "type": "object",
@@ -271,14 +339,23 @@
                   "defaultCompletionOptions": {
                     "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/defaultCompletionOptions"
                   },
+                  "cacheBehavior": {
+                    "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/cacheBehavior"
+                  },
                   "requestOptions": {
                     "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/requestOptions"
                   },
                   "embedOptions": {
                     "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/embedOptions"
                   },
+                  "chatOptions": {
+                    "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/chatOptions"
+                  },
                   "promptTemplates": {
                     "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/promptTemplates"
+                  },
+                  "useLegacyCompletionsEndpoint": {
+                    "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/useLegacyCompletionsEndpoint"
                   },
                   "env": {
                     "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/env"
@@ -300,7 +377,44 @@
             "type": "object",
             "properties": {
               "uses": {
-                "type": "string"
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "string",
+                    "enum": [
+                      "anthropic/claude-3-7-sonnet",
+                      "togetherai/llama-4-maverick-instruct-17bx128e",
+                      "google/gemini-2.5-pro",
+                      "mistral/codestral",
+                      "voyageai/voyage-code-3",
+                      "relace/instant-apply",
+                      "xai/grok-2",
+                      "openai/gpt-4o",
+                      "togetherai/llama-4-scout-instruct-17bx16e",
+                      "anthropic/claude-3-5-sonnet",
+                      "google/gemini-2.0-flash",
+                      "voyageai/rerank-2",
+                      "ollama/deepseek-r1",
+                      "morphllm/morph-v0",
+                      "anthropic/claude-3-5-haiku",
+                      "lmstudio/deepseek-r1",
+                      "openai/o3-mini",
+                      "voyageai/voyage-code-2",
+                      "ollama/qwen2.5-coder-1.5b",
+                      "openai/gpt-4o-mini",
+                      "openai/o1",
+                      "mistral/mistral-embed",
+                      "ollama/nomic-embed-text-latest",
+                      "lmstudio/deepseek-r1-8b",
+                      "mistral/mistral-large",
+                      "lmstudio/qwen2.5-coder-1.5b",
+                      "ollama/deepseek-r1-8b",
+                      "openai/text-embedding-3-large"
+                    ]
+                  }
+                ]
               },
               "with": {
                 "type": "object",
@@ -334,14 +448,23 @@
                       "defaultCompletionOptions": {
                         "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/defaultCompletionOptions"
                       },
+                      "cacheBehavior": {
+                        "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/cacheBehavior"
+                      },
                       "requestOptions": {
                         "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/requestOptions"
                       },
                       "embedOptions": {
                         "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/embedOptions"
                       },
+                      "chatOptions": {
+                        "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/chatOptions"
+                      },
                       "promptTemplates": {
                         "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/promptTemplates"
+                      },
+                      "useLegacyCompletionsEndpoint": {
+                        "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/useLegacyCompletionsEndpoint"
                       },
                       "env": {
                         "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/env"
@@ -380,14 +503,23 @@
                       "defaultCompletionOptions": {
                         "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/defaultCompletionOptions"
                       },
+                      "cacheBehavior": {
+                        "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/cacheBehavior"
+                      },
                       "requestOptions": {
                         "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/requestOptions"
                       },
                       "embedOptions": {
                         "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/embedOptions"
                       },
+                      "chatOptions": {
+                        "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/chatOptions"
+                      },
                       "promptTemplates": {
                         "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/promptTemplates"
+                      },
+                      "useLegacyCompletionsEndpoint": {
+                        "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/useLegacyCompletionsEndpoint"
                       },
                       "env": {
                         "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/env"
@@ -416,6 +548,9 @@
           {
             "type": "object",
             "properties": {
+              "name": {
+                "type": "string"
+              },
               "provider": {
                 "type": "string"
               },
@@ -441,6 +576,9 @@
               "override": {
                 "type": "object",
                 "properties": {
+                  "name": {
+                    "$ref": "#/properties/context/items/anyOf/0/properties/name"
+                  },
                   "provider": {
                     "$ref": "#/properties/context/items/anyOf/0/properties/provider"
                   },
@@ -510,7 +648,7 @@
             "type": "object",
             "properties": {
               "uses": {
-                "type": "string"
+                "$ref": "#/properties/context/items/anyOf/1/properties/uses"
               },
               "with": {
                 "type": "object",
@@ -581,6 +719,10 @@
                 "additionalProperties": {
                   "type": "string"
                 }
+              },
+              "connectionTimeout": {
+                "type": "number",
+                "exclusiveMinimum": 0
               }
             },
             "required": [
@@ -593,7 +735,7 @@
             "type": "object",
             "properties": {
               "uses": {
-                "type": "string"
+                "$ref": "#/properties/context/items/anyOf/1/properties/uses"
               },
               "with": {
                 "type": "object",
@@ -618,6 +760,9 @@
                   },
                   "env": {
                     "$ref": "#/properties/mcpServers/items/anyOf/0/properties/env"
+                  },
+                  "connectionTimeout": {
+                    "$ref": "#/properties/mcpServers/items/anyOf/0/properties/connectionTimeout"
                   }
                 },
                 "additionalProperties": true
@@ -649,8 +794,18 @@
                   "rule": {
                     "type": "string"
                   },
-                  "if": {
-                    "type": "string"
+                  "globs": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      }
+                    ]
                   }
                 },
                 "required": [
@@ -665,7 +820,7 @@
             "type": "object",
             "properties": {
               "uses": {
-                "type": "string"
+                "$ref": "#/properties/context/items/anyOf/1/properties/uses"
               },
               "with": {
                 "type": "object",
@@ -709,7 +864,7 @@
             "type": "object",
             "properties": {
               "uses": {
-                "type": "string"
+                "$ref": "#/properties/context/items/anyOf/1/properties/uses"
               },
               "with": {
                 "type": "object",
@@ -771,7 +926,7 @@
             "type": "object",
             "properties": {
               "uses": {
-                "type": "string"
+                "$ref": "#/properties/context/items/anyOf/1/properties/uses"
               },
               "with": {
                 "type": "object",
