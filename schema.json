@@ -65,6 +65,9 @@
                   "apiBase": {
                     "type": "string"
                   },
+                  "maxStopWords": {
+                    "type": "number"
+                  },
                   "roles": {
                     "type": "array",
                     "items": {
@@ -124,6 +127,9 @@
                         "type": "number"
                       },
                       "promptCaching": {
+                        "type": "boolean"
+                      },
+                      "stream": {
                         "type": "boolean"
                       }
                     },
@@ -330,6 +336,9 @@
                   "apiBase": {
                     "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/apiBase"
                   },
+                  "maxStopWords": {
+                    "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/maxStopWords"
+                  },
                   "roles": {
                     "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/roles"
                   },
@@ -439,6 +448,9 @@
                       "apiBase": {
                         "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/apiBase"
                       },
+                      "maxStopWords": {
+                        "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/maxStopWords"
+                      },
                       "roles": {
                         "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/roles"
                       },
@@ -493,6 +505,9 @@
                       },
                       "apiBase": {
                         "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/apiBase"
+                      },
+                      "maxStopWords": {
+                        "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/maxStopWords"
                       },
                       "roles": {
                         "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/roles"
@@ -705,6 +720,16 @@
               "command": {
                 "type": "string"
               },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "sse",
+                  "stdio"
+                ]
+              },
+              "url": {
+                "type": "string"
+              },
               "faviconUrl": {
                 "type": "string"
               },
@@ -726,8 +751,7 @@
               }
             },
             "required": [
-              "name",
-              "command"
+              "name"
             ],
             "additionalProperties": true
           },
@@ -751,6 +775,12 @@
                   },
                   "command": {
                     "$ref": "#/properties/mcpServers/items/anyOf/0/properties/command"
+                  },
+                  "type": {
+                    "$ref": "#/properties/mcpServers/items/anyOf/0/properties/type"
+                  },
+                  "url": {
+                    "$ref": "#/properties/mcpServers/items/anyOf/0/properties/url"
                   },
                   "faviconUrl": {
                     "$ref": "#/properties/mcpServers/items/anyOf/0/properties/faviconUrl"
@@ -792,6 +822,9 @@
                     "type": "string"
                   },
                   "rule": {
+                    "type": "string"
+                  },
+                  "description": {
                     "type": "string"
                   },
                   "globs": {
