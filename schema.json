@@ -65,6 +65,9 @@
                   "apiBase": {
                     "type": "string"
                   },
+                  "maxStopWords": {
+                    "type": "number"
+                  },
                   "roles": {
                     "type": "array",
                     "items": {
@@ -124,6 +127,9 @@
                         "type": "number"
                       },
                       "promptCaching": {
+                        "type": "boolean"
+                      },
+                      "stream": {
                         "type": "boolean"
                       }
                     },
@@ -285,6 +291,36 @@
                       ]
                     }
                   },
+                  "autocompleteOptions": {
+                    "type": "object",
+                    "properties": {
+                      "disable": {
+                        "type": "boolean"
+                      },
+                      "maxPromptTokens": {
+                        "type": "number"
+                      },
+                      "debounceDelay": {
+                        "type": "number"
+                      },
+                      "modelTimeout": {
+                        "type": "number"
+                      },
+                      "maxSuffixPercentage": {
+                        "type": "number"
+                      },
+                      "prefixPercentage": {
+                        "type": "number"
+                      },
+                      "template": {
+                        "type": "string"
+                      },
+                      "onlyMyCode": {
+                        "type": "boolean"
+                      }
+                    },
+                    "additionalProperties": true
+                  },
                   "provider": {
                     "type": "string",
                     "const": "continue-proxy"
@@ -330,6 +366,9 @@
                   "apiBase": {
                     "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/apiBase"
                   },
+                  "maxStopWords": {
+                    "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/maxStopWords"
+                  },
                   "roles": {
                     "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/roles"
                   },
@@ -359,6 +398,9 @@
                   },
                   "env": {
                     "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/env"
+                  },
+                  "autocompleteOptions": {
+                    "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/autocompleteOptions"
                   },
                   "provider": {
                     "type": "string"
@@ -439,6 +481,9 @@
                       "apiBase": {
                         "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/apiBase"
                       },
+                      "maxStopWords": {
+                        "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/maxStopWords"
+                      },
                       "roles": {
                         "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/roles"
                       },
@@ -468,6 +513,9 @@
                       },
                       "env": {
                         "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/env"
+                      },
+                      "autocompleteOptions": {
+                        "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/autocompleteOptions"
                       },
                       "provider": {
                         "type": "string",
@@ -494,6 +542,9 @@
                       "apiBase": {
                         "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/apiBase"
                       },
+                      "maxStopWords": {
+                        "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/maxStopWords"
+                      },
                       "roles": {
                         "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/roles"
                       },
@@ -523,6 +574,9 @@
                       },
                       "env": {
                         "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/env"
+                      },
+                      "autocompleteOptions": {
+                        "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/autocompleteOptions"
                       },
                       "provider": {
                         "type": "string"
@@ -705,6 +759,17 @@
               "command": {
                 "type": "string"
               },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "sse",
+                  "stdio",
+                  "streamable-http"
+                ]
+              },
+              "url": {
+                "type": "string"
+              },
               "faviconUrl": {
                 "type": "string"
               },
@@ -726,8 +791,7 @@
               }
             },
             "required": [
-              "name",
-              "command"
+              "name"
             ],
             "additionalProperties": true
           },
@@ -751,6 +815,12 @@
                   },
                   "command": {
                     "$ref": "#/properties/mcpServers/items/anyOf/0/properties/command"
+                  },
+                  "type": {
+                    "$ref": "#/properties/mcpServers/items/anyOf/0/properties/type"
+                  },
+                  "url": {
+                    "$ref": "#/properties/mcpServers/items/anyOf/0/properties/url"
                   },
                   "faviconUrl": {
                     "$ref": "#/properties/mcpServers/items/anyOf/0/properties/faviconUrl"
@@ -794,6 +864,9 @@
                   "rule": {
                     "type": "string"
                   },
+                  "description": {
+                    "type": "string"
+                  },
                   "globs": {
                     "anyOf": [
                       {
@@ -806,6 +879,9 @@
                         }
                       }
                     ]
+                  },
+                  "alwaysApply": {
+                    "type": "boolean"
                   }
                 },
                 "required": [
