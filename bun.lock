@@ -4,7 +4,7 @@
     "": {
       "name": "continue-json-schema",
       "dependencies": {
-        "@continuedev/config-yaml": "^1.0.94",
+        "@continuedev/config-yaml": "^1.0.96",
         "zod": "^3.25.74",
         "zod-to-json-schema": "^3.24.6",
       },
@@ -19,7 +19,7 @@
   "packages": {
     "@continuedev/config-types": ["@continuedev/config-types@1.0.14", "", { "dependencies": { "zod": "^3.23.8" } }, "sha512-PVHyHPyRXd2QsaNgnCpiKYU3uHFTlyuQSkqE8OwrBmQqO6/TXUVIr/2EGtyIZGrml4Y+rGMSH40WU4/0t4SGpQ=="],
 
-    "@continuedev/config-yaml": ["@continuedev/config-yaml@1.0.94", "", { "dependencies": { "@continuedev/config-types": "^1.0.14", "yaml": "^2.6.1", "zod": "^3.24.2" }, "bin": { "config-yaml": "dist/cli.js" } }, "sha512-zS3iKya5xwfJkPTKtfpt7gEQFymAoTXdLPHpOVXKByN3Q217GWphs+f8wwakd7IHMj5Wr2VDmyN4oUZBizHJmA=="],
+    "@continuedev/config-yaml": ["@continuedev/config-yaml@1.0.96", "", { "dependencies": { "@continuedev/config-types": "^1.0.14", "yaml": "^2.6.1", "zod": "^3.24.2" }, "bin": { "config-yaml": "dist/cli.js" } }, "sha512-zEdSI1k2SSEj1qRuOpyERebqMzCEynJ2ce2+q2/5VjR1/2uSi2PpiZr5saofs2VKSQtIU4Pj4xwQ7Utd0hQEBA=="],
 
     "@types/bun": ["@types/bun@1.2.18", "", { "dependencies": { "bun-types": "1.2.18" } }, "sha512-Xf6RaWVheyemaThV0kUfaAUvCNokFr+bH8Jxp+tTZfx7dAPA8z9ePnP9S9+Vspzuxxx9JRAXhnyccRj3GyCMdQ=="],
 
@@ -42,7 +42,5 @@
     "zod-to-json-schema": ["zod-to-json-schema@3.24.6", "", { "peerDependencies": { "zod": "^3.24.1" } }, "sha512-h/z3PKvcTcTetyjl1fkj79MHNEjm+HpD6NXheWjzOekY7kV+lwDYnHw+ivHkijnCSMz1yJaWBD9vu/Fcmk+vEg=="],
 
     "@continuedev/config-types/zod": ["zod@3.24.2", "", {}, "sha512-lY7CDW43ECgW9u1TcT3IoXHflywfVqDYze4waEz812jR/bZ8FHDsl7pFQoSZTz5N+2NqRXs8GBwnAwo3ZNxqhQ=="],
-
-    "@continuedev/config-yaml/zod": ["zod@3.25.64", "", {}, "sha512-hbP9FpSZf7pkS7hRVUrOjhwKJNyampPgtXKc3AN6DsWtoHsg2Sb4SQaS4Tcay380zSwd2VPo9G9180emBACp5g=="],
   }
 }
