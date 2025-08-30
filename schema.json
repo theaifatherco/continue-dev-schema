@@ -111,6 +111,15 @@
                       "topK": {
                         "type": "number"
                       },
+                      "minP": {
+                        "type": "number"
+                      },
+                      "presencePenalty": {
+                        "type": "number"
+                      },
+                      "frequencyPenalty": {
+                        "type": "number"
+                      },
                       "stop": {
                         "type": "array",
                         "items": {
@@ -236,6 +245,9 @@
                       },
                       "baseAgentSystemMessage": {
                         "type": "string"
+                      },
+                      "basePlanSystemMessage": {
+                        "type": "string"
                       }
                     },
                     "additionalProperties": true
@@ -328,6 +340,12 @@
                   "apiKeyLocation": {
                     "type": "string"
                   },
+                  "envSecretLocations": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "string"
+                    }
+                  },
                   "orgScopeId": {
                     "type": [
                       "string",
@@ -345,7 +363,6 @@
                   "name",
                   "model",
                   "provider",
-                  "apiKeyLocation",
                   "orgScopeId",
                   "onPremProxyUrl"
                 ],
@@ -523,6 +540,12 @@
                       },
                       "apiKeyLocation": {
                         "type": "string"
+                      },
+                      "envSecretLocations": {
+                        "type": "object",
+                        "additionalProperties": {
+                          "type": "string"
+                        }
                       }
                     },
                     "additionalProperties": true
@@ -785,9 +808,15 @@
                   "type": "string"
                 }
               },
+              "cwd": {
+                "type": "string"
+              },
               "connectionTimeout": {
                 "type": "number",
                 "exclusiveMinimum": 0
+              },
+              "requestOptions": {
+                "$ref": "#/properties/models/items/anyOf/0/anyOf/0/properties/requestOptions"
               }
             },
             "required": [
@@ -831,8 +860,14 @@
                   "env": {
                     "$ref": "#/properties/mcpServers/items/anyOf/0/properties/env"
                   },
+                  "cwd": {
+                    "$ref": "#/properties/mcpServers/items/anyOf/0/properties/cwd"
+                  },
                   "connectionTimeout": {
                     "$ref": "#/properties/mcpServers/items/anyOf/0/properties/connectionTimeout"
+                  },
+                  "requestOptions": {
+                    "$ref": "#/properties/mcpServers/items/anyOf/0/properties/requestOptions"
                   }
                 },
                 "additionalProperties": true
@@ -868,6 +903,19 @@
                     "type": "string"
                   },
                   "globs": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      }
+                    ]
+                  },
+                  "regex": {
                     "anyOf": [
                       {
                         "type": "string"
